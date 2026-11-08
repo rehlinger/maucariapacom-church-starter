@@ -5,7 +5,7 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com', // Replace with your site URL
+  site: 'https://rehls.com', // Replace with your site URL
   integrations: [
     sitemap(),
     preact(),
