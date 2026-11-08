@@ -47,14 +47,6 @@ export default defineConfig({
               .replace(/(^-|-$)/g, ""),
         },
       },
-      search: {
-        tina: {
-            indexerToken: process.env.TINA_SEARCH_TOKEN,
-            stopwordLanguages: ['eng'],
-        },
-        indexBatchSize: 100,
-        maxSearchIndexFieldLength: 100,
-      },
       fields: [
         { type: "string", name: "title", label: "Title", isTitle: true, required: true },
         { type: "string", name: "slug", label: "URL slug (lowercase, hyphens)" },
