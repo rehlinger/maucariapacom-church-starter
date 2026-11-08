@@ -24,7 +24,6 @@ pnpm-debug.log*
 .idea/
 
 # nodejs
-package-lock.json
 
 node_modules
 tina/__generated__
