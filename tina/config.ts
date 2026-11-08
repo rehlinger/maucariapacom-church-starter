@@ -25,60 +25,48 @@ export default defineConfig({
   // },
   media: {
     tina: {
-      mediaRoot: '',
+      mediaRoot: 'uploads',
       publicFolder: 'public',
     },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
-      {
-        name: 'post',
-        label: 'Posts',
-        path: 'content/posts',
-        fields: [
-          {
-            type: 'string',
-            name: 'eyebrow',
-            label: 'Eyebrow',
-          },
-          {
-            type: 'string',
-            name: 'title',
-            label: 'Headline',
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Tagline',
-            isBody: true,
-          },
-          {
-            type: 'object',
-            name: 'ctaPrimary',
-            label: 'Primary button',
-            fields: [
-              { type: 'string', name: 'label', label: 'Label' },
-              { type: 'string', name: 'href', label: 'Link' },
-            ],
-          },
-          {
-            type: 'object',
-            name: 'ctaSecondary',
-            label: 'Secondary button',
-            fields: [
-              { type: 'string', name: 'label', label: 'Label' },
-              { type: 'string', name: 'href', label: 'Link' },
-            ],
-          },
-        ],
-        ui: {
-          // Opens the /tinacms-demo page for visual editing. Change or remove to fit your site.
-          router: () => '/tinacms-demo',
+    {
+      name: "blog",
+      label: "Blog Posts",
+      path: "src/content/blog",
+      format: "md", // change to "mdx" if your posts end in .mdx
+      ui: {
+        filename: {
+          readonly: false,
+          slugify: (values) =>
+            (values?.title || "")
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, ""),
         },
       },
+      fields: [
+        { type: "string", name: "title", label: "Title", isTitle: true, required: true },
+        { type: "string", name: "slug", label: "URL slug (lowercase, hyphens)" },
+        { type: "datetime", name: "pubDate", label: "Publish date", required: true },
+        { type: "string", name: "description", label: "Short description", ui: { component: "textarea" } },
+        { type: "string", name: "author", label: "Author" },
+        {
+          type: "object",
+          name: "image",
+          label: "Featured image",
+          fields: [
+            { type: "image", name: "url", label: "Image" },
+            { type: "string", name: "alt", label: "Image description (alt text)" },
+          ],
+        },
+        { type: "string", name: "tags", label: "Tags", list: true },
+        { type: "boolean", name: "draft", label: "Draft (hide from website)" },
+        { type: "rich-text", name: "body", label: "Post text", isBody: true },
+      ],
+    },
     ],
   },
 });
