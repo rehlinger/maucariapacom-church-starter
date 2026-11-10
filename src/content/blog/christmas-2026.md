@@ -10,26 +10,19 @@ image:
 
 Hi This is a test.
 
-```mermaid
-%% This won't render without implementing a rendering engine (e.g. mermaid on npm)
-flowchart TD
-    id1(this is an example flow diagram)
-    --> id2(modify me to see changes!)
-    id2
-    --> id3(Click the top button to preview the changes)
-    --> id4(Learn about mermaid diagrams - mermaid.js.org)
-```
-
 Christmas is coming.
+
+Loading
+
+| hjh | kjkj | kjnlk |
+| --- | ---- | ----- |
+| 1   | 2    | 3     |
+| 4   | 5    | 6     |
 
 Not yet though!
 
-```mermaid
-%% This won't render without implementing a rendering engine (e.g. mermaid on npm)
-flowchart TD
-    id1(this is an example flow diagram)
-    --> id2(modify me to see changes!)
-    id2
-    --> id3(Click the top button to preview the changes)
-    --> id4(Learn about mermaid diagrams - mermaid.js.org)
-```
+Loading
+
+Thanks,
+
+Alex
