@@ -25,7 +25,7 @@ export default defineConfig({
   // },
   media: {
     tina: {
-      mediaRoot: 'uploads',
+      mediaRoot: 'uploads/blog',
       publicFolder: 'public',
     },
   },
@@ -67,7 +67,7 @@ export default defineConfig({
           label: "Featured image",
           fields: [
             { type: "image", name: "url", label: "Image" },
-            { type: "string", name: "alt", label: "Image description (alt text)" },
+            { type: "string", name: "alt", label: "Image description (alt text)", required: true},
           ],
         },
         { type: "string", name: "tags", label: "Tags", list: true },
