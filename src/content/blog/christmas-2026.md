@@ -8,3 +8,8 @@ image:
   alt: red
 ---
 
+Hi This is a test.
+
+Christmas is coming.
+
+Not yet though!
