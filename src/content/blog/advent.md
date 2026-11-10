@@ -9,3 +9,10 @@ image:
   alt: bed
 ---
 
+Here is a post that is about something else.
+
+Image below:![](/uploads/blog/christmas-program-2026.png)
+
+Thanks,
+
+Alex
